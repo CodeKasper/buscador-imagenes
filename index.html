@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#5a67d8" />
+    <link rel="shortcut icon" href="favicon.png">
+    <title>Buscador de Imágenes</title>
+    <link rel="stylesheet" href="css/tailwind.min.css">
+    <link rel="stylesheet" href="css/custom.min.css">
+</head>
+
+<body>
+
+        <div class="hero">
+            <div class="hero-img">
+                <img loading="lazy" src="img/hero.jpg">
+            </div>
+            <div class="hero-container">
+                <h1 class="hero-title">Buscador de Imágenes</h1>
+    
+                <div class="search max-w-lg mx-auto ">
+                    <form id="formulario" class="">
+                        <div>
+    
+                            <div class="search-container">
+                                <input id="termino" placeholder="Buscar fotos. Ejemplo: Café o Comida" type="search">
+                                <button type="submit" value="Buscar Imágenes">
+                                    <i class="search-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                                            </path>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> <!-- End Hero-->
+
+    <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
+        <div class="border-b mb-5 flex text-sm">
+            <div class="text-indigo-600 flex items-center pb-2 pr-2 border-b-2 border-indigo-600 uppercase">
+                <img class="title-photo mr-2" src="img/photo.svg">
+                <a href="#" class="font-semibold inline-block">Fotografías</a>
+            </div>
+        </div>
+        <div id="resultado" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
+    </div>
+
+    <div id="paginacion" class="container mx-auto text-center flex flex-wrap justify-center"></div>
+
+    <footer>
+        <div class="copyright">
+            <p>Hecho Con <img src="img/heart.svg" alt="Amor"> Por <a href="https://jotadev.netlify.app/"> JotaDev</a></p>
+          </div>
+    </footer>
+    <script src="js/fslightbox.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
