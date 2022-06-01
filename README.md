@@ -1,7 +1,7 @@
 <h2 align="center">Buscador de Imagenes consumiendo la API de Pixabay</h2>
 <div align="center">
 
-<a href="https://codekasper.github.io/card-spa"><strong>➥ Live Demo</strong></a>
+<a href="https://codekasper.github.io/buscador-imagenes"><strong>➥ Live Demo</strong></a>
  </div>
 <br />
 
@@ -19,7 +19,7 @@
 
 ### Contacto
 
-Si quieres contactar conmigo puedes hacerlo desde mi [Site Web](https://jotadev.netlify.app/).
+Si quieres contactar conmigo puedes hacerlo desde mi [Sitio Web](https://jotadev.netlify.app/).
 
 ### Licencia
 
