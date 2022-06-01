@@ -19,7 +19,7 @@
 
 ### Contacto
 
-Si quieres contactar conmigo puedes hacerlo desde mi sitio web [Site Web](https://jotadev.netlify.app/).
+Si quieres contactar conmigo puedes hacerlo desde mi [Site Web](https://jotadev.netlify.app/).
 
 ### Licencia
 
