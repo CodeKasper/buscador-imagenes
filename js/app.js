@@ -77,7 +77,6 @@ function calcularPaginas(total) {
     return parseInt(Math.ceil(total / registroPorPagina));
 }
 function mostrarImagenes(imagenes) {
-    console.log(imagenes)
     
     while(resultado.firstChild) {
         resultado.removeChild(resultado.firstChild);
