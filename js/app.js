@@ -1,6 +1,7 @@
 const resultado = document.querySelector('#resultado');
 const formulario = document.querySelector('#formulario');
 const paginacionDiv = document.querySelector('#paginacion');
+const divHeading = document.querySelector('#heading');
 
 const registroPorPagina = 40;
 let totalPaginas;
@@ -16,7 +17,7 @@ function validarFormulario(e) {
     e.preventDefault();
 
     const terminoBusqueda = document.querySelector('#termino').value;
-    
+
     if(terminoBusqueda === '') {
         mostrarAlerta('Agrega un término de búsqueda');
         return;
@@ -50,9 +51,8 @@ function mostrarAlerta(mensaje) {
     }
 }
 
-
 function buscarImagenes() {
-
+    headingResultado();
     const termino = document.querySelector('#termino').value;
     
     const key = '27765604-3ac229706030bfff75d97cc25';
@@ -148,4 +148,22 @@ function imprimirPaginador() {
         }
         paginacionDiv.appendChild(boton);
     }
+}
+
+function headingResultado() {
+    while(divHeading.firstChild){
+        divHeading.removeChild(divHeading.firstChild);
+    }
+    
+    const terminoBusqueda = document.querySelector('#termino').value;
+    const icon = document.createElement('IMG');
+    icon.src = 'img/photo.svg';
+    icon.classList.add('title-photo', 'mr-2');
+
+    const heading = document.createElement('H2');
+    heading.classList.add('font-semibold', 'inline-block','border-b-2','border-indigo-600');
+    heading.innerHTML = `Imagenes: ${terminoBusqueda}`;
+   
+    divHeading.appendChild(icon);
+    divHeading.appendChild(heading);  
 }
