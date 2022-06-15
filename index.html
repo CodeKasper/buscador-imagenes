@@ -1,60 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#e86ed0" />
+    <meta name="theme-color" content="#9f1239" />
     <link rel="shortcut icon" href="favicon.png">
     <title>Buscador de Imágenes</title>
-    <link rel="stylesheet" href="css/tailwind.min.css">
+    <script src="js/tailwind.js"></script>
     <link rel="stylesheet" href="css/custom.min.css">
 </head>
 
-<body>
+<body class="relative min-h-screen pb-16">
 
-        <div class="hero">
-            <div class="hero-img">
-                <img loading="lazy" src="img/hero2.jpg">
-            </div>
-            <div class="hero-container">
-                <h1 class="hero-title">Buscador de Imágenes</h1>
-    
-                <div class="search">
-                    <form id="formulario" class="form">
-                    
-    
-                            <div class="search-container">
-                                <input id="termino" placeholder="Buscar imágenes. Ej: Café o Comida" type="search">
-                                <button type="submit" value="Buscar Imágenes">
-                                    <i class="search-icon"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35"
-                                            viewBox="0 0 24 24">
-                                            <path
-                                                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
-                                            </path>
-                                        </svg>
-                                    </i>
-                                </button>
-                            </div>
-                       
-                    </form>
-                </div>
-            </div>
-        </div> <!-- End Hero-->
+    <header class="flex justify-center items-center relative bg-black text-center h-[28rem] min-h-full mb-11">
+        <div class="absolute top-0 overflow-hidden w-full h-full">
+            <img class="opacity-60 w-full h-full" loading="lazy" src="img/hero2.jpg">
+        </div>
+        <div class="relative md:w-1/2 w-full max-w-full mx-1.5">
+            <h1 class="sm:text-4xl text-xl text-white uppercase font-bold my-10">Buscador de Imágenes</h1>
+            
+            <div class="bg-white/[.2] p-4 rounded">
+                <form id="formulario" class="sm:flex sm:justify-between sm:gap-4">
+                    <div class="w-full bg-white rounded">
+                        <input class="flex-1 block w-full text-gray-600 sm:text-sm py-2.5 px-2.5 rounded" id="termino" placeholder="Ejemplo: Café o Comida" type="search">
+                    </div>
 
-    <div class="max-w-screen-xl mx-auto p-5  sm:p-10 sm:pt-2 md:p-16 md:pt-2">
+                    <div class="search-btn">
+                        <button type="submit" value="Buscar Imágenes"
+                            class="flex w-full mt-4 sm:mt-0 justify-center transition ease duration-500 bg-rose-800 hover:bg-rose-900 text-teal-50 font-bold py-2 px-4 rounded inline-flex items-center gap-x-1">
+                            <svg class="fill-white" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24">
+                                <path
+                                    d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                                </path>
+                            </svg>
+                            <span>Buscar</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div id="alerta"></div>
+        </div>
+    </header> <!-- End Header-->
+
+    <main class="max-w-screen-xl mx-auto p-5  sm:p-10 sm:pt-2 md:p-16 md:pt-2">
         <div class="border-b mb-5 flex text-sm">
-            <div id="heading" class="text-indigo-600 mx-auto flex justify-center items-center pb-2 pr-2 uppercase">
+            <div id="heading" class="mx-auto flex justify-center items-center pb-2 pr-2">
             </div>
         </div>
         <div id="resultado" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
-    </div>
+    </main> <!-- End Main-->
 
     <div id="paginacion" class="container mx-auto text-center flex flex-wrap justify-center"></div>
 
+
     <footer>
-        <div class="copyright">
-            <p>Hecho Con <img src="img/heart.svg" alt="Amor"> Por <a href="https://jotadev.netlify.app/"> JotaDev</a></p>
-          </div>
+        <div class="copyright absolute w-full bottom-0 flex justify-center bg-rose-800 pt-5 pb-2.5">
+            <p class="flex text-xs text-white">Hecho Con <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-black" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+              </svg> Por <a class="transition ease duration-500 ml-1.5 font-bold border-b-2 border-rose-900 hover:bg-rose-900" href="https://jotadev.netlify.app/"> JotaDev</a>
+            </p>
+        </div>
     </footer>
     <script src="js/fslightbox.js"></script>
     <script src="js/app.js"></script>
